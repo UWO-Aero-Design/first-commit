@@ -186,3 +186,11 @@ You can see that for the fizzbuzz-examples folder, the most recent commit was th
 At this point we could make a pull/merge request to move our changes into develop but first I'm going to introduce the interactive rebase which is an incredibly important git command.
 
 ### **GIT REBASE**
+
+Let's say you aren't very happy with having the range be 1-100 and would rather have 75-200 or you dont like that the values you just chose for fizz and buzz.
+
+We could modify them and then add our new changes, make a new commit and then push it but then we would have two different commits for what is ultimately the same thing, the previous commit has no value.
+
+Instead we will use the interactive rebase to overwrite our previous commit.
+
+Type `git rebase -i HEAD~1` to say we want to modify the last 1 commit from our current point in time (HEAD). The `-i` option means interactive. You'll get a screen like this:
