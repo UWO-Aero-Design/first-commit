@@ -101,3 +101,88 @@ At this point, you have a two options. You can:
 If you choose 1. look at the previous examples and follow their structure. Remember to include the language site for installation and how to run the program on Windows, Linux and macOS.
 
 If you choose 2. your task is to simply change the multiples that fizz and buzz are printed on.
+
+Both of these are fairly simple, and the point of this tutorial is to teach git so I wont be showing you how to write/change the code.
+My contribution will be a new fizzbuzz example written in julia.
+
+### The current files are:
+![](./pictures/prev-files.png)
+
+### New will be:
+![](./pictures/new-files.png)
+
+As you can see, the newly add files are automatically highlighted by VSCode. The color may be different but 'U' means that the file is not tracked by git (Currently Unknown).
+
+### Here is the completed example:
+![](./pictures/julia-example.png)
+  
+### **GIT ADD**
+To contribute code to the repository we must first prepare the code that we wish to push. This is done by:
+
+* Type `git add .` to stage all your changes
+* Type `git add file-name/` to stage all changes to a specific file
+* Type `git add -p` to add specific lines (**advanced**)
+
+![](./pictures/git-add.png)
+
+I only made a change to one file so there is no harm by doing the first one.
+
+### **GIT COMMIT**
+Once the modified code has been prepped we can write an explanation for the changes:
+
+* Type `git commit` (Opens nano editor)
+* Type `git commit -m "commit title"` (leaves empty message body)
+
+![](./pictures/git-commit.png)
+  
+
+![](./pictures/nano.png)
+nano might seem confusing but its actually really simple. The first line is your commit title, leave a blank line and then write a body for the commit message. Once you're done the options are listed at the bottom.
+
+* Type `ctrl + o` and hit enter to save the commit message
+* Type `ctrl + x` to then leave the nano editor
+
+When you exit, you should see some output like the following
+We can see:
+* The branch name
+* Commit hash
+* Summary of changes
+```
+[zd-onboard f8f00ca] Add julia example
+ 1 file changed, 29 insertions(+)
+ create mode 100644 git-intro/fizzbuzz-examples/julia/fizzbuzz.jl
+```
+
+### **GIT PUSH**
+
+The changes you have made so far are still only on your computer. If someone wants to see the work you have done and use it for themselves, it needs to be available on the remote repository.
+
+Type `git push origin branch-name` and hit enter
+You'll be given a bunch of output, as long as there are no errors, everything is okay
+
+```
+...Documents/aero-design/first-commit on zd-onboard  took 4m4s 
+04:31:17 PM    git push origin zd-onboard
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 772 bytes | 772.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'zd-onboard' on GitHub by visiting:
+remote:      https://github.com/UWO-Aero-Design/first-commit/pull/new/zd-onboard
+remote: 
+To github.com:UWO-Aero-Design/first-commit.git
+ * [new branch]      zd-onboard -> zd-onboard
+```
+
+And now if we go look on github, we should see your branch there, use the Dropdown menu to switch to it. (Ignore the commits ahead of master on mine)
+
+You can see that for the fizzbuzz-examples folder, the most recent commit was the "Add julia example" which we just wrote.
+![](./pictures/first-push.png)
+
+At this point we could make a pull/merge request to move our changes into develop but first I'm going to introduce the interactive rebase which is an incredibly important git command.
+
+### **GIT REBASE**
