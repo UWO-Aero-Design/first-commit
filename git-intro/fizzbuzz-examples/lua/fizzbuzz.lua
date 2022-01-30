@@ -6,7 +6,6 @@
     
     ** Make sure you are in the lua folder so that the
     ** code file can be found
-"""
 --]]
 
 -- The range of numbers we wish to run the exercise on

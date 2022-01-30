@@ -8,7 +8,7 @@ The code changes will be incredibly simple but done in a convoluted manner to ex
 * Time to complete this tutorial will vary based on how quickly someone can respond to the merge requests. Assuming no wait time:
   * If you already know git, this tutorial should be <30 minutes
   * If you have no experience then expect about 1-2 hours
-  * You have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code.
+* Tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code.
 * The majority of this tutorial will be using the command line, members are free to use GUI based git tools, but they won't be covered here. (It's possible to complete this tutorial using GUI based tools so if you feel more comfortable using them, definitely do so!, there just won't be examples for it)
 * This tutorial assumes you have no prior knowledge other than what a terminal is.
 * The tutorial was written by someone using Linux, but there is no reason why the steps can't be followed on Mac and Windows, though you may need some extra things on Windows.

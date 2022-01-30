@@ -3,7 +3,8 @@
     Go to: https://www.rust-lang.org/tools/install
     Once installed, open your terminal and type:
         `rustc fizzbuzz.rs`
-        `./fizzbuzz`
+        `./fizzbuzz` - Linux or macOS
+        `.\fizzbuzz.exe` - Windows
 
     ** Make sure you are in the rust folder so that the
     ** code file can be found.
