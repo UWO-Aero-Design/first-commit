@@ -5,6 +5,6 @@
 
 ## Currently there is only a git tutorial but in the future this may be expanded
   
-  
+
 ## **Current Tutorials**
 * ### Introduction to Git (WIP)
