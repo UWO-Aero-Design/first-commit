@@ -1,3 +1,14 @@
+/*
+    To run the code, you must have a rust installed
+    Go to: https://www.rust-lang.org/tools/install
+    Once installed, open your terminal and type:
+        `rustc fizzbuzz.rs`
+        `./fizzbuzz`
+
+    ** Make sure you are in the rust folder so that the
+    ** code file can be found.
+*/
+
 fn main() {
     // The range of numbers we wish to run the exercise on
     let lower: u8 = 1;

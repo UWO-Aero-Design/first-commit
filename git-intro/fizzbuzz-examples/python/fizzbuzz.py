@@ -1,3 +1,13 @@
+"""
+    To run the code, you must have python installed
+    Go to: https://www.python.org/downloads/
+    Once installed, open your terminal and type:
+        `python3 fizzbuzz.py`
+    
+    ** Make sure you are in the python folder so that the
+    ** code file can be found
+"""
+
 # The range of numbers we wish to run the exercise on
 lower = 1
 upper = 100
