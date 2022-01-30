@@ -48,7 +48,7 @@ Once the link is copied to your clipboard open up a terminal and navigate to you
 
 Type `git clone <repo-to-clone>` replacing `<x-x-x>` with the text you copied. Remember to hit Enter. You might get prompted for a password.
 
-Type `cd aero-design` once its done cloning
+Type `cd aero-design` once its done cloning 
 
 Finally type `ls` 
 
@@ -71,14 +71,33 @@ Other helpful branch commands are:
 * `git branch` to list **local** branches
 * `git branch -r` to list **remote** branches
 * `git branch -a` to list **all** branches (local and remote)
-# Add a picture here
+![](./pictures/git-branch.png)
+
 We never want to do our work on the `master` or `develop` branches. Master branches should only contain completely functional code and is mostly for creating new major versions. Develop branches are for code being prepped for master and is where we first attempt to combine our work into a functional system. Develop will probably be less stable than master but should have many new additions.
 
 That said, let's create a branch to do some work, type:
 
 * `git checkout develop` to switch to the develop branch
 * `git checkout -b new-branch-name develop` to create a new branch that splits off from develop (we split off of develop because thats the branch we want to merge back into and also because it has the current features that we want to build off)
-# Add a picture here
+
+When you create a new branch, it automatically puts you on that branch, but if you wanna double check, I've already shown you how up above.
+
+![](./pictures/new-branch.png)
+
 Remember to change new-branch-name to something else. Your initials followed by -onboard is fine for this tutorial.
 
 ## **Contributing Code and git { add | push | commit }**
+
+**It's time to make your first contribution**
+
+If you open the fizzbuzz-examples folder, you'll see a bunch folders that have been named based on programming languages.
+
+Each folder will have fizzbuzz example written in that language. To run any of the examples, you'll need to first install the language. If you are completely new to this, I would recommend **python** or **lua**.
+
+At this point, you have a two options. You can:
+1. Write another fizzbuzz example in a new language
+1. Install one of the languages for which an example was written and modify the existing example.
+
+If you choose 1. look at the previous examples and follow their structure. Remember to include the language site for installation and how to run the program on Windows, Linux and macOS.
+
+If you choose 2. your task is to simply change the multiples that fizz and buzz are printed on.
