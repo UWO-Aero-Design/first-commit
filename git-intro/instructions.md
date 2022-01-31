@@ -272,7 +272,7 @@ And now the push will work. **Don't make a merge request yet though!** We wanna 
 
 Since you're obviously qualified to walk other people through the tutorial now, how about adding you name to the list of people who have completed this tutorial.
 
-This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. Replace zd with your initials.
+This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. *Replace zd with your initials*
 
 `git checkout develop`
 
