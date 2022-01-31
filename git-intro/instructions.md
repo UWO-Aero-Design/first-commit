@@ -102,6 +102,8 @@ If you choose 1. look at the previous examples and follow their structure. Remem
 
 If you choose 2. your task is to simply change the multiples that fizz and buzz are printed on.
 
+You can open VSCode from the command line using `code .` and make your changes.
+
 Both of these are fairly simple, and the point of this tutorial is to teach git so I wont be showing you how to write/change the code.
 My contribution will be a new fizzbuzz example written in julia.
 
@@ -187,10 +189,92 @@ At this point we could make a pull/merge request to move our changes into develo
 
 ### **GIT REBASE**
 
+**Dont complete this next section unless you have pushed your code to the repository and can see it on github**
+
 Let's say you aren't very happy with having the range be 1-100 and would rather have 75-200 or you dont like that the values you just chose for fizz and buzz.
 
 We could modify them and then add our new changes, make a new commit and then push it but then we would have two different commits for what is ultimately the same thing, the previous commit has no value.
 
 Instead we will use the interactive rebase to overwrite our previous commit.
 
-Type `git rebase -i HEAD~1` to say we want to modify the last 1 commit from our current point in time (HEAD). The `-i` option means interactive. You'll get a screen like this:
+First make sure your code file is open in an editor. (`code .` if you have VSCode)
+
+Type `git rebase -i HEAD~1` to say we want to modify the last 1 commit from our current point in time (HEAD). The `-i` option means interactive. You'll get a screen like this (It's nano again):
+
+![](./pictures/interactive-rebase.png)
+You can see our commit, if we had more commit and specified HEAD~x we would have seen x commit there.
+
+Underneath it are a bunch of commands we are allowed to use. We want to modify the actual code in our commit so we will use `edit`. Do this by replacing
+
+```
+pick e47e5f0 Add julia example
+```
+
+with 
+
+```
+edit e47e5f0 Add julia example
+```
+Then hit `ctrl+o` , `enter` , and `ctrl+x`
+
+Nano will exit and the terminal should have a message like the following:
+
+```
+...Documents/aero-design/first-commit on zd-onboard  took 1m49s 
+06:06:09 PM    git rebase -i HEAD~1
+Stopped at e47e5f0...  Add julia example
+You can amend the commit now, with
+
+  git commit --amend 
+
+Once you are satisfied with your changes, run
+
+  git rebase --continue
+
+```
+
+Go into your editor and start making the changes you want, I am going to change the range to be between 75 and 200 but feel free to change any of the variables. Remember to save your changes before proceeding.
+
+Now go back to your terminal and type
+
+* `git add modified-file-name`
+* `git rebase --continue`
+
+Nano will appear again, and our original commit message will be on the screen. You can change the commit title or message if your changes need to reflected here. Once your satisfied type:
+
+Then hit `ctrl+o` , `enter` , and `ctrl+x` (This is the last time I'll be writing that)
+
+```
+...Documents/aero-design/first-commit on HEAD  (e47e5f0) (rebase 1/1) [+1] 
+06:23:57 PM    git rebase --continue### **GIT REBASE**
+[detached HEAD df2bfa9] Add julia example
+ Date: Sun Jan 30 16:27:12 2022 -0500
+ 1 file changed, 29 insertions(+)
+ create mode 100644 git-intro/fizzbuzz-examples/julia/fizzbuzz.jl
+Successfully rebased and updated refs/heads/zd-onboard.
+```
+
+Now we need to push our changes back to the remote again.
+
+You can try it using the command from before but youll get an error
+
+![](./pictures/push-fail.png)
+
+When we do a rebase that modifies the repository, we modify the commit history, this changes all the edited commit hashes to different values. This means that our branch no longer looks like the one on the remote and since the commits don't match up anywhere. But we don't want the version on the remote, our local changes are definitely correct, so instead we have to do a force push.
+
+Force pushes are dangerous so only ever do it when no one else is working on the same branch as you. We created a new branch to complete this tutorial so it'll be okay.
+
+`git push --force origin branch-name`
+
+And now the push will work. **Don't make a merge request yet though!** We wanna do one last thing before that so we can really drill down interactive rebasing. Just continue to the next section for now.
+
+### **HELPME.md**
+
+Since you're obviously qualified to walk other people through the tutorial now, how about adding you name to the list of people who have completed this tutorial.
+
+This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. Replace zd with your initials.
+
+`git checkout develop`
+
+`git checkout -b zd-update-help develop`
+
