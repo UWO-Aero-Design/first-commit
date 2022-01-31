@@ -96,11 +96,12 @@ Each folder will have fizzbuzz example written in that language. To run any of t
 
 At this point, you have a two options. You can:
 1. Write another fizzbuzz example in a new language
+1. Write anther twosum example in a new language
 1. Install one of the languages for which an example was written and modify the existing example.
 
-If you choose 1. look at the previous examples and follow their structure. Remember to include the language site for installation and how to run the program on Windows, Linux and macOS.
+If you choose 1 or 2 look at the previous examples and follow their structure. Remember to include the language site for installation and how to run the program on Windows, Linux and macOS.
 
-If you choose 2. your task is to simply change the multiples that fizz and buzz are printed on.
+If you choose 3 your task is to simply change the multiples that fizz and buzz are printed on or change the target and data array of twosum.
 
 You can open VSCode from the command line using `code .` and make your changes.
 
