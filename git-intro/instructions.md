@@ -48,9 +48,9 @@ Once the link is copied to your clipboard open up a terminal and navigate to you
 
 Type `git clone <repo-to-clone>` replacing `<x-x-x>` with the text you copied. Remember to hit Enter. You might get prompted for a password.
 
-Type `cd aero-design` once its done cloning 
+* Type `cd aero-design` once its done cloning 
 
-Finally type `ls` 
+* Finally type `ls` 
 
 *NOTE: `ls` means list files*
 
@@ -59,18 +59,19 @@ Finally type `ls`
 Your Terminal might look something like this now ![](./pictures/progress-after-clone.png)
 
 
-## **Branches and 'git checkout'**
+## **Branches and GIT { CHECKOUT | BRANCH }**
 If you noticed above, I have the current branch `master` appearing as a part of my prompt. If you don't have that, look up some tutorials online to get it working, it's extremely helpful.
 
 Whenever you clone a repository, you will always be placed on the `master` branch. In the event that you're working and forget the current branch name type:
 
-`git branch --show-current`
+* `git branch --show-current`
 
 Other helpful branch commands are:
 
 * `git branch` to list **local** branches
 * `git branch -r` to list **remote** branches
 * `git branch -a` to list **all** branches (local and remote)
+
 ![](./pictures/git-branch.png)
 
 We never want to do our work on the `master` or `develop` branches. Master branches should only contain completely functional code and is mostly for creating new major versions. Develop branches are for code being prepped for master and is where we first attempt to combine our work into a functional system. Develop will probably be less stable than master but should have many new additions.
@@ -86,7 +87,7 @@ When you create a new branch, it automatically puts you on that branch, but if y
 
 Remember to change new-branch-name to something else. Your initials followed by -onboard is fine for this tutorial.
 
-## **Contributing Code and git { add | push | commit }**
+## **Contributing Code and GIT { ADD | COMMIT | PUSH }**
 
 **It's time to make your first contribution**
 
@@ -130,7 +131,7 @@ To contribute code to the repository we must first prepare the code that we wish
 
 I only made a change to one file so there is no harm by doing the first one.
 
-### **GIT COMMIT**
+## **GIT COMMIT**
 Once the modified code has been prepped we can write an explanation for the changes:
 
 * Type `git commit` (Opens nano editor)
@@ -156,7 +157,7 @@ We can see:
  create mode 100644 git-intro/fizzbuzz-examples/julia/fizzbuzz.jl
 ```
 
-### **GIT PUSH**
+## **GIT PUSH**
 
 The changes you have made so far are still only on your computer. If someone wants to see the work you have done and use it for themselves, it needs to be available on the remote repository.
 
@@ -188,7 +189,7 @@ You can see that for the fizzbuzz-examples folder, the most recent commit was th
 
 At this point we could make a pull/merge request to move our changes into develop but first I'm going to introduce the interactive rebase which is an incredibly important git command.
 
-### **GIT REBASE**
+## **GIT REBASE**
 
 **Dont complete this next section unless you have pushed your code to the repository and can see it on github**
 
@@ -216,7 +217,7 @@ with
 ```
 edit e47e5f0 Add julia example
 ```
-Then hit `ctrl+o` , `enter` , and `ctrl+x`
+* Then hit `ctrl+o` , `enter` , and `ctrl+x`
 
 Nano will exit and the terminal should have a message like the following:
 
@@ -265,17 +266,98 @@ When we do a rebase that modifies the repository, we modify the commit history, 
 
 Force pushes are dangerous so only ever do it when no one else is working on the same branch as you. We created a new branch to complete this tutorial so it'll be okay.
 
-`git push --force origin branch-name`
+* `git push --force origin branch-name`
 
 And now the push will work. **Don't make a merge request yet though!** We wanna do one last thing before that so we can really drill down interactive rebasing. Just continue to the next section for now.
 
-### **HELPME.md**
+## **HELPME.md**
 
 Since you're obviously qualified to walk other people through the tutorial now, how about adding you name to the list of people who have completed this tutorial.
 
-This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. *Replace zd with your initials*
+This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. *Replace zd with your own initials*
 
-`git checkout develop`
+* `git checkout develop`
+* `git checkout -b zd-update-help develop`
 
-`git checkout -b zd-update-help develop`
+# Add a picture here
+
+Go to HELPME.md file and add your name to the Super Exclusive List. Also put what operating system you used in case people need help with operating system specific stuff. 
+
+Be sure to update the date aswell so people know when the list was last maintained.
+
+Once youre done, commit and push your changes! (Last Time I tell you how)
+
+* `git add .`
+* `git commit` - You'll enter nano (refer to above)
+* `git push origin branch-name`
+
+Now lets go make a Merge/Pull Request for our old branch.
+
+*NOTE: GitHub calls it Pull Request and GitLab calls it Merge Request*
+
+Go to repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop and remember to give it a good title and explanation.
+
+To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). Be sure to message them just in case they dont realize they have been asked on github. It might also be a good idea to ask in the general controls chat so you can get help quicker.
+
+# Add a picture here
+
+If the reviewer asks you to make any changes, try working through them.
+**Remember to switch back to the old branch to actually make the changes though.**
+
+Also ask them if any changes should be made to the HELPME.md list such as if any members have graduated or if a person has been promoted to lead but is not denoted as such on the list.
+
+If any changes to the list are needed, make sure you are on the update-helpme branch when making the updates. Commit and Push the changes!
+
+To continue to the next part you must have your first branch, merged into develop. If you are still waiting on approval, just sit tight for now!
+
+## **Updating Local and GIT { FETCH | PULL }**
+
+So now that you have your first branch merged in, its time to do the second branch where we updated the `HELPME.md` file. If all your current changes are pushed to github go to the repository site and make another pull request. Once again, make sure the target branch is develop. Don't set a reviewer yet though!
+
+Once you make the Pull/Merge Request you'll notice this time that github says the branch is not ready to be merged in automatically.
+**Why is that?**
+
+Explaining this is better done visually, lets start with how the branches looked at beginning of thuis tutorial.
+
+```
+master (HASH A)             _____.
+develop (HASH B)                  \______
+```
+We have a master, and a develop which may or may not have some extra changes that master doesn't. Next we made our first branch and pushed some changes to it.
+
+```
+master (HASH A)             _____.
+develop (HASH B)                  \______.
+update-examples (HASH C)                  \_____
+```
+Then we made another branch to update the `HELPME.md` file
+```
+master (HASH A)            _____.
+develop (HASH B)                 \______.
+update-examples (HASH C)                |\_____
+update-helpme (HASH D)                   \_____
+```
+And then we merged examples back into develop
+```
+master (HASH A)            _____.
+develop (HASH C)                 \______._______.
+update-examples (HASH C)                |\_____/
+update-helpme (HASH D)                   \_____
+```
+Cleaning up the branches
+```
+master (HASH A)            _____.
+develop (HASH C)                 \______._______.
+update-helpme (HASH D)                   \_____
+```
+Looking at the branches, develop, which was originally at commit hash b is now at commit hash c.
+
+The update-helpme branch, was branched off at commit hash b so it has all updates up until that point but no information about commit hash c which was done by update-examples branch.
+
+This problem arises whenever multiple people are looking to push and merge changes back into the same branch. The branch gets new updates, that you dont have and that needs to reconciled somehow.
+
+There are two ways to do this (There may be others but I dont't know them). The first is using the interactive rebase and the second is doing a 3-way merge. I will show using the interactive rebase but if you want to read a little on the differences between rebase and 3-way you can do so at the following links.
+
+https://www.atlassian.com/git/tutorials/using-branches/git-merge
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 
