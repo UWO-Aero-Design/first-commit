@@ -310,7 +310,7 @@ If any changes to the list are needed, make sure you are on the update-helpme br
 
 To continue to the next part you must have your first branch, merged into develop. If you are still waiting on approval, just sit tight for now!
 
-## **Updating Local and GIT { FETCH | PULL }**
+## **How to Merge**
 
 So now that you have your first branch merged in, its time to do the second branch where we updated the `HELPME.md` file. If all your current changes are pushed to github go to the repository site and make another pull request. Once again, make sure the target branch is develop. Don't set a reviewer yet though!
 
@@ -361,3 +361,27 @@ There are two ways to do this (There may be others but I dont't know them). The 
 https://www.atlassian.com/git/tutorials/using-branches/git-merge
 https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 
+## **Updating Local and GIT { FETCH | PULL }**
+
+The first step is to update our local develop branch to be consistent with the remote. You can switch to the develop branch but it shouldn't be necessary
+
+* `git fetch origin` (Get updates from remote 'origin')
+* `git fetch origin develop` (Update the develop branch of origin)
+* `git fetch --all --prune` (Update everything)
+
+--all is good to do if its been a long time since you have last worked on the repository and want absolutely all updates.
+
+--prune is to remove remote-tracking references that no longer exist. Since they don't exist anymore, we *probably* dont need them either.
+
+I don't usually think about it so, I just stick with the third one.
+
+# Add a picture here
+
+Something to note is that `git fetch` only retrieves updates, and so it doesn't apply them. You can see in my terminal in the git information part of the prompt, that there are some numbers with a down arrow. This is to let me know there are changes that can be applied if I choose to do so.
+
+We can actually check what those changes are by running:
+
+* `git status`
+```
+Put the terminal output of git status here
+```
