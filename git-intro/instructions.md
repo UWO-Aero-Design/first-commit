@@ -378,10 +378,29 @@ I don't usually think about it so, I just stick with the third one.
 # Add a picture here
 
 Something to note is that `git fetch` only retrieves updates, and so it doesn't apply them. You can see in my terminal in the git information part of the prompt, that there are some numbers with a down arrow. This is to let me know there are changes that can be applied if I choose to do so.
-
+## Maybe get rid of above if status shows nothing and nothing is in the prompt
 We can actually check what those changes are by running:
 
 * `git status`
 ```
 Put the terminal output of git status here
 ```
+
+To apply the changes we need to run
+* `git pull origin develop`
+
+This will update our develop branch to be consistent with whats on github. If you open the branch in an editor, you should be able to see the updates you had made earlier on your old branch.
+
+To see the exact commits that made these changes, you can run:
+
+* `git log`
+
+```
+Put the git log output here
+```
+
+Now that our develop branch has all the necessary updates, switch back to your update-helpme branch and then run the following.
+
+`git rebase -i origin/develop`
+
+This is saying we want to rebase our branch using the develop branch of the remote, origin and to do it using the interactive tools.
