@@ -16,10 +16,8 @@ The code changes will be incredibly simple but done in a convoluted manner to ex
 
 ## **HELP**
 If you need help at point during the tutorial dont be afraid to ask. There is a file name HELPME.md which should contain an updated list of people that have already completed the tutorial or are familiar with the material.
-
-It also contains what operating system the person used in case you need operating system specific help. (Though outside the next section, you most likely won't)
   
-
+  
 ## **Windows Users**
 
 If you're on Windows computer which I'm assuming most are, I highly recommend installing the Windows Terminal from the Microsoft Store and using powershell.
@@ -272,34 +270,32 @@ And now the push will work. **Don't make a merge request yet though!** We wanna 
 
 ## **HELPME.md**
 
-Since you're obviously qualified to walk other people through the tutorial now, how about adding you name to the list of people who have completed this tutorial.
+Since you're obviously qualified to walk other people through the tutorial now, how about adding your name to the list of people who have completed this tutorial.
 
 This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. *Replace zd with your own initials*
 
 * `git checkout develop`
 * `git checkout -b zd-update-help develop`
 
-# Add a picture here
-
-Go to HELPME.md file and add your name to the Super Exclusive List. Also put what operating system you used in case people need help with operating system specific stuff. 
+Go to HELPME.md file and add your name to the Super Exclusive List.
 
 Be sure to update the date aswell so people know when the list was last maintained.
 
 Once youre done, commit and push your changes! (Last Time I tell you how)
 
 * `git add .`
-* `git commit` - You'll enter nano (refer to above)
+* `git commit` - You'll enter nano (refer to above if you need help)
 * `git push origin branch-name`
 
 Now lets go make a Merge/Pull Request for our old branch.
 
 *NOTE: GitHub calls it Pull Request and GitLab calls it Merge Request*
 
-Go to repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop and remember to give it a good title and explanation.
+Go to repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop and remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
 
 To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). Be sure to message them just in case they dont realize they have been asked on github. It might also be a good idea to ask in the general controls chat so you can get help quicker.
 
-# Add a picture here
+# Add a picture here (Merge Request on GitHub)
 
 If the reviewer asks you to make any changes, try working through them.
 **Remember to switch back to the old branch to actually make the changes though.**
@@ -308,7 +304,7 @@ Also ask them if any changes should be made to the HELPME.md list such as if any
 
 If any changes to the list are needed, make sure you are on the update-helpme branch when making the updates. Commit and Push the changes!
 
-To continue to the next part you must have your first branch, merged into develop. If you are still waiting on approval, just sit tight for now!
+**To continue to the next part you must have your first branch, merged into develop. If you are still waiting on approval, just sit tight for now!**
 
 ## **How to Merge**
 
@@ -399,8 +395,14 @@ To see the exact commits that made these changes, you can run:
 Put the git log output here
 ```
 
+# **Git Rebase Round 2**
+
 Now that our develop branch has all the necessary updates, switch back to your update-helpme branch and then run the following.
 
 `git rebase -i origin/develop`
 
 This is saying we want to rebase our branch using the develop branch of the remote, origin and to do it using the interactive tools.
+
+We used rebase before to rewrite one our commits. This time we will be using rebase to change where our commits start from. Once done, the commits on our branch will no longer be as if they branched off from the old develop branch. It will not look as if we branched off from develop after the examples were updated. (Ill show this visually later). For now this is what your screen should like:
+
+# Put picture here of the interactive rebase
