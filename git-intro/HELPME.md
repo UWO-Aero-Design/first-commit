@@ -6,4 +6,5 @@ Ask using Team's, Slack, or whatever communication tool, Aero-Design is using in
 
 Once you complete git-intro, you'll be allowed to join this super exclusive list
   
-Super Exclusive List is Up-To-Date as of **January 29, 2022 @ 11:42pm EST**
+Super Exclusive List is Up-To-Date as of **February 01, 2022 @ 10:06pm EST**
+* Zachary D'Souza
