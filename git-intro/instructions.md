@@ -290,7 +290,7 @@ Now lets go make a Merge/Pull Request for our old branch.
 ![](./pictures/create-request.png)
 *NOTE: GitHub calls it Pull Request and GitLab calls it Merge Request*
 
-Go to repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop
+Go to the repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop
 ![](./pictures/merge-branch.png)
 
 On the next screen (nto shown here) remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
@@ -375,7 +375,7 @@ The first step is to update our local develop branch to be consistent with the r
 
 --prune is to remove remote-tracking references that no longer exist. Since they don't exist anymore, we *probably* dont need them either.
 
-I don't usually think about it so, I just stick with the third one.
+I don't usually think about it so I just stick with the third one.
 
 ```
 ...git/aero-design/first-commit on git-intro-tut  took 2s 
@@ -413,7 +413,7 @@ Fast-forward
  create mode 100644 git-intro/fizzbuzz-examples/julia/fizzbuzz.jl
 
 ```
-You can see that the julia fizzbuzz example was added in. Your changes should have updated in your editor aswell, if you were looking at develop.
+You can see that the julia fizzbuzz example was added in. Your changes should have updated in your editor aswell, assuming you were paying attention.
 
 This is how you can pull updates to a branch made by other people. In this case the changes were made by you, but the exact same steps would be used to get updates by others.
 
@@ -423,7 +423,7 @@ We used rebase before to rewrite one our commits. This time we will be using reb
 
 Now it will look as if we branched off from develop after the examples branch was merged in. Ill show this visually:
 
-We left off, with our branches in this state:
+If remember from earlier, We left off with our branches in this state:
 ```
 master (HASH A)            _____.
 develop (HASH C)                 \______._______.
@@ -433,26 +433,30 @@ After completing this next rebase, our branch should look like this:
 ```
 master (HASH A)            _____.
 develop (HASH C)                 \______._______.
-update-helpme (HASH D)                           \_____
+update-helpme (HASH E)                           \_____
 ```
 
-Now that our develop branch has all the necessary updates, switch back to your update-helpme branch and then run the following.
+Update-helpme will look as if it was branched after the changes were merged into develop and will get a new commit hash to go along with it.
 
-`git rebase -i origin/develop`
+Now to start, run this command:
+
+`git rebase -i origin/develop` (nano will open again)
 
 This is saying we want to rebase our branch using the develop branch of the remote, origin and to do it using the interactive tools.
 
-# Put picture here of the interactive rebase
+![](./pictures/rebase-r2.png)
 
-There should only be the single commit that you made on this branch (where we updated the helpme.md). You should know how to save and get out this editor by now
+There should only be the single commit that you made on this branch (where we updated the helpme.md). You should know how to save and get out this editor by now. (You can go back in the tutorial if you forgot)
 
 When you exit there are two possibilities. 
 1. If you had any merge conflicts appearing on github, then the rebase will stop and ask you to choose and resolve them.
 1. If you had no conflicts on github, then you should just see the same updates that were applied to develop be applied here.
 
-In the case of 1. you will need to go through in your editor and manually select which changes should be applied and then use `git add .` and `git rebase --continue`. Once complete, your branch should now contain the updates you selected and your updates on this branch together. You can now push your branch back to github and see the conflicts dissappear. (Remember you'll need force push) (Dont be afraid to ask for help)
+In the case of 1. you will need to go through in your editor and manually select which changes should be applied and then use `git add .` and `git rebase --continue`. Once complete, your branch should now contain the updates you selected and your updates on this branch together. You can push your branch back to github and see the conflicts disappear in the pull request. (Remember you'll need force push) (Dont be afraid to ask for help). Set a reviewer and get it merged into develop.
 
-In the case of 2. you should see that your branch updates have essentially been merged with develop. You dont need to push your changes though since github was okay with your branch before so just get that branch merged in by selecting a reviewer. You really only completed this part to learn more about rebasing.
+In the case of 2. you should see that your branch updates have essentially been merged with develop. You dont need to push your changes though as github was already okay with your branch before, just get the branch merged in by selecting a reviewer for the PR. You really only completed this part to learn more about rebasing.
+
+Once your branches are merged in, try updating your local develop with the new changes again. If you do it right, develop will show the update the HELPME.md file.
 
 # **Congratulations**
 You have now completed the tutorial!! You should have learned how to use git add, commit, push, pull, fetch, branch, and rebase. All of these combined should give you a good base of using git for development. In the future you can try learning other helpful but not neccessary commands like git log, status, diff, and pop.
