@@ -419,14 +419,42 @@ This is how you can pull updates to a branch made by other people. In this case 
 
 # **Git Rebase Round 2**
 
+We used rebase before to rewrite one our commits. This time we will be using rebase to change where our commits start from. Once done, the commits on our branch will no longer be as if they branched off from the old develop branch. 
+
+Now it will look as if we branched off from develop after the examples branch was merged in. Ill show this visually:
+
+We left off, with our branches in this state:
+```
+master (HASH A)            _____.
+develop (HASH C)                 \______._______.
+update-helpme (HASH D)                   \_____
+```
+After completing this next rebase, our branch should look like this:
+```
+master (HASH A)            _____.
+develop (HASH C)                 \______._______.
+update-helpme (HASH D)                           \_____
+```
+
 Now that our develop branch has all the necessary updates, switch back to your update-helpme branch and then run the following.
 
 `git rebase -i origin/develop`
 
 This is saying we want to rebase our branch using the develop branch of the remote, origin and to do it using the interactive tools.
 
-We used rebase before to rewrite one our commits. This time we will be using rebase to change where our commits start from. Once done, the commits on our branch will no longer be as if they branched off from the old develop branch. 
-
-Now it will look as if we branched off from develop after the examples branch was merged in. (Ill show this visually later). For now this is what your screen should like:
-
 # Put picture here of the interactive rebase
+
+There should only be the single commit that you made on this branch (where we updated the helpme.md). You should know how to save and get out this editor by now
+
+When you exit there are two possibilities. 
+1. If you had any merge conflicts appearing on github, then the rebase will stop and ask you to choose and resolve them.
+1. If you had no conflicts on github, then you should just see the same updates that were applied to develop be applied here.
+
+In the case of 1. you will need to go through in your editor and manually select which changes should be applied and then use `git add .` and `git rebase --continue`. Once complete, your branch should now contain the updates you selected and your updates on this branch together. You can now push your branch back to github and see the conflicts dissappear. (Remember you'll need force push) (Dont be afraid to ask for help)
+
+In the case of 2. you should see that your branch updates have essentially been merged with develop. You dont need to push your changes though since github was okay with your branch before so just get that branch merged in by selecting a reviewer. You really only completed this part to learn more about rebasing.
+
+# **Congratulations**
+You have now completed the tutorial!! You should have learned how to use git add, commit, push, pull, fetch, branch, and rebase. All of these combined should give you a good base of using git for development. In the future you can try learning other helpful but not neccessary commands like git log, status, diff, and pop.
+
+If you noticed any mistakes or think this tutorial is terrible, you can now fix them yourself.
