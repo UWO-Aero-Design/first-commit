@@ -209,9 +209,7 @@ Underneath it are a bunch of commands we are allowed to use. We want to modify t
 ```
 pick e47e5f0 Add julia example
 ```
-
 with 
-
 ```
 edit e47e5f0 Add julia example
 ```
@@ -266,7 +264,7 @@ Force pushes are dangerous so only ever do it when no one else is working on the
 
 * `git push --force origin branch-name`
 
-And now the push will work. **Don't make a merge request yet though!** We wanna do one last thing before that so we can really drill down interactive rebasing. Just continue to the next section for now.
+And now the push will work. **Don't make a merge request yet though!** Just continue to the next section for now.
 
 ## **HELPME.md**
 
@@ -281,21 +279,23 @@ Go to HELPME.md file and add your name to the Super Exclusive List.
 
 Be sure to update the date aswell so people know when the list was last maintained.
 
+![](./pictures/Updated-list.png)
 Once youre done, commit and push your changes! (Last Time I tell you how)
 
 * `git add .`
-* `git commit` - You'll enter nano (refer to above if you need help)
+* `git commit` - You'll enter nano (refer to previous sections if you need help)
 * `git push origin branch-name`
 
 Now lets go make a Merge/Pull Request for our old branch.
-
+![](./pictures/create-request.png)
 *NOTE: GitHub calls it Pull Request and GitLab calls it Merge Request*
 
-Go to repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop and remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
+Go to repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop
+![](./pictures/merge-branch.png)
+
+On the next screen (nto shown here) remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
 
 To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). Be sure to message them just in case they dont realize they have been asked on github. It might also be a good idea to ask in the general controls chat so you can get help quicker.
-
-# Add a picture here (Merge Request on GitHub)
 
 If the reviewer asks you to make any changes, try working through them.
 **Remember to switch back to the old branch to actually make the changes though.**
@@ -306,12 +306,20 @@ If any changes to the list are needed, make sure you are on the update-helpme br
 
 **To continue to the next part you must have your first branch, merged into develop. If you are still waiting on approval, just sit tight for now!**
 
-## **How to Merge**
+## **Conflicts (if any)**
 
-So now that you have your first branch merged in, its time to do the second branch where we updated the `HELPME.md` file. If all your current changes are pushed to github go to the repository site and make another pull request. Once again, make sure the target branch is develop. Don't set a reviewer yet though!
+So now that you have your first branch merged in, its time to do the second branch where we updated the `HELPME.md` file. If all your current changes are pushed to github go to the site repository and make another pull request. Once again, make sure the target branch is develop. Don't set a reviewer yet though.
 
-Once you make the Pull/Merge Request you'll notice this time that github says the branch is not ready to be merged in automatically.
-**Why is that?**
+Sometimes if lots of changes have been made, github will notify you that the branch has conflicts with the base branch. Our changes were really small and contained to individual files each time so our two branch didn't conflict with each other at all. But how do you resolve it if they do?
+
+Lets add a change that would break the changes we made on the other branch and see what github says.
+
+
+
+
+
+
+
 
 Explaining this is better done visually, lets start with how the branches looked at beginning of thuis tutorial.
 
