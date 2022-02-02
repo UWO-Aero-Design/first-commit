@@ -310,18 +310,15 @@ If any changes to the list are needed, make sure you are on the update-helpme br
 
 So now that you have your first branch merged in, its time to do the second branch where we updated the `HELPME.md` file. If all your current changes are pushed to github go to the site repository and make another pull request. Once again, make sure the target branch is develop. Don't set a reviewer yet though.
 
-Sometimes if lots of changes have been made, github will notify you that the branch has conflicts with the base branch. Our changes were really small and contained to individual files each time so our two branch didn't conflict with each other at all. But how do you resolve it if they do?
+Sometimes if lots of changes have been made, github will notify you that the branch has conflicts with the base branch. (I got approval but only to make the tutorial a bit faster)
+![](./pictures/no-conflicts.png)
+Our changes were really small and contained to individual files each time so our two branches didn't conflict with each other at all. 
 
-Lets add a change that would break the changes we made on the other branch and see what github says.
+If you have a similar output where github has no complaints, you could set a reviewer and finish the process, however, keep reading so that you can learn how to update your local branches and also how you can resolve conflicts if there are any. This will be super important when it comes time to work with others.
 
+To start, GitHub will generally tell you something like "Your branch is x commits behind the target branch". First I'll explain how this actually happens.
 
-
-
-
-
-
-
-Explaining this is better done visually, lets start with how the branches looked at beginning of thuis tutorial.
+Explaining this is better done visually, so lets start with how the branches looked at beginning of this tutorial.
 
 ```
 master (HASH A)             _____.
@@ -358,16 +355,17 @@ Looking at the branches, develop, which was originally at commit hash b is now a
 
 The update-helpme branch, was branched off at commit hash b so it has all updates up until that point but no information about commit hash c which was done by update-examples branch.
 
-This problem arises whenever multiple people are looking to push and merge changes back into the same branch. The branch gets new updates, that you dont have and that needs to reconciled somehow.
+What would happen if in the update helpme branch, we tried changing the variables that had been set by updates-examples?
 
-There are two ways to do this (There may be others but I dont't know them). The first is using the interactive rebase and the second is doing a 3-way merge. I will show using the interactive rebase but if you want to read a little on the differences between rebase and 3-way you can do so at the following links.
+When it comes time to merge into develop, we would need to pick whether we want the variable values from update-examples or the variables from update-helpme.
 
-https://www.atlassian.com/git/tutorials/using-branches/git-merge
-https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+This problem arises whenever multiple people are looking to push and merge changes back into the same branch and may have written over the same code independantly. The second person attempting to merge will need to specify which should be kept and how the changes should be resolved.
+
+There are different ways to do this, the one I'll show is using the interactive rebase.
 
 ## **Updating Local and GIT { FETCH | PULL }**
 
-The first step is to update our local develop branch to be consistent with the remote. You can switch to the develop branch but it shouldn't be necessary
+The first step is to update our local develop branch to be consistent with the remote. Switch to the develop branch first. (You should know how by now)
 
 * `git fetch origin` (Get updates from remote 'origin')
 * `git fetch origin develop` (Update the develop branch of origin)
@@ -379,29 +377,45 @@ The first step is to update our local develop branch to be consistent with the r
 
 I don't usually think about it so, I just stick with the third one.
 
-# Add a picture here
-
-Something to note is that `git fetch` only retrieves updates, and so it doesn't apply them. You can see in my terminal in the git information part of the prompt, that there are some numbers with a down arrow. This is to let me know there are changes that can be applied if I choose to do so.
-## Maybe get rid of above if status shows nothing and nothing is in the prompt
-We can actually check what those changes are by running:
-
-* `git status`
 ```
-Put the terminal output of git status here
+...git/aero-design/first-commit on git-intro-tut  took 2s 
+10:39:11 PM    git checkout develop
+Switched to branch 'develop'
+
+...git/aero-design/first-commit on develop  
+10:39:17 PM    git fetch --all --prune
+Fetching origin
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 645 bytes | 645.00 KiB/s, done.
+From github.com:UWO-Aero-Design/first-commit
+   b0d41ff..c94e73e  develop    -> origin/develop
+
 ```
+
+Something to note is that `git fetch` only retrieves updates, and so it doesn't apply them. Before we apply them, open your editor to the file you had modified the variables. If you added a new file don't worry about it, just pay attention to your file explorer.
 
 To apply the changes we need to run
 * `git pull origin develop`
 
-This will update our develop branch to be consistent with whats on github. If you open the branch in an editor, you should be able to see the updates you had made earlier on your old branch.
-
-To see the exact commits that made these changes, you can run:
-
-* `git log`
+This will update our develop branch to be consistent with whats on github.
 
 ```
-Put the git log output here
+...git/aero-design/first-commit on develop  took 4s 
+10:39:49 PM    git pull origin develop
+From github.com:UWO-Aero-Design/first-commit
+ * branch            develop    -> FETCH_HEAD
+Updating b0d41ff..c94e73e
+Fast-forward
+ git-intro/fizzbuzz-examples/julia/fizzbuzz.jl | 29 ++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 git-intro/fizzbuzz-examples/julia/fizzbuzz.jl
+
 ```
+You can see that the julia fizzbuzz example was added in. Your changes should have updated in your editor aswell, if you were looking at develop.
+
+This is how you can pull updates to a branch made by other people. In this case the changes were made by you, but the exact same steps would be used to get updates by others.
 
 # **Git Rebase Round 2**
 
@@ -411,6 +425,8 @@ Now that our develop branch has all the necessary updates, switch back to your u
 
 This is saying we want to rebase our branch using the develop branch of the remote, origin and to do it using the interactive tools.
 
-We used rebase before to rewrite one our commits. This time we will be using rebase to change where our commits start from. Once done, the commits on our branch will no longer be as if they branched off from the old develop branch. It will not look as if we branched off from develop after the examples were updated. (Ill show this visually later). For now this is what your screen should like:
+We used rebase before to rewrite one our commits. This time we will be using rebase to change where our commits start from. Once done, the commits on our branch will no longer be as if they branched off from the old develop branch. 
+
+Now it will look as if we branched off from develop after the examples branch was merged in. (Ill show this visually later). For now this is what your screen should like:
 
 # Put picture here of the interactive rebase
