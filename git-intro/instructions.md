@@ -452,7 +452,27 @@ When you exit there are two possibilities.
 1. If you had any merge conflicts appearing on github, then the rebase will stop and ask you to choose and resolve them.
 1. If you had no conflicts on github, then you should just see the same updates that were applied to develop be applied here.
 
-In the case of 1. you will need to go through in your editor and manually select which changes should be applied and then use `git add .` and `git rebase --continue`. Once complete, your branch should now contain the updates you selected and your updates on this branch together. You can push your branch back to github and see the conflicts disappear in the pull request. (Remember you'll need force push) (Dont be afraid to ask for help). Set a reviewer and get it merged into develop.
+This is what the conflict may look like:
+```
+01:18:26 AM    git rebase -i origin/develop 
+Auto-merging git-intro/HELPME.md 
+CONFLICT (content): Merge conflict in git-intro/HELPME.md 
+error: could not apply aed3a79... Add section on pull fetch 
+Resolve all conflicts manually, mark them as resolved with 
+"git add/rm <conflicted_files>", then run "git rebase --continue". 
+You can instead skip this commit: run "git rebase --skip". 
+To abort and get back to the state before "git rebase", run "git rebase --abort
+". 
+Could not apply aed3a79... Add section on pull fetch 
+> 
+```
+
+In the case of 1. you will need to go through in your editor and manually select which changes should be applied and then use `git add .` and `git rebase --continue`. Below you can see what selecting changes looks like in VSCode. I created this example on purpose using an extra branch, in this case, I selected "Accept Both Changes" but if you want you could take only one.
+
+![](./pictures/select-which.png)
+
+Once complete, your branch should now contain the updates you selected and your updates on this branch together. You can push your branch back to github and see the conflicts disappear in the pull request. (Remember you'll need force push) (Dont be afraid to ask for help). Set a reviewer and get it merged into develop.
+
 
 In the case of 2. you should see that your branch updates have essentially been merged with develop. You dont need to push your changes though as github was already okay with your branch before, just get the branch merged in by selecting a reviewer for the PR. You really only completed this part to learn more about rebasing.
 
