@@ -1,32 +1,31 @@
-# **Welcome to UWO Aero Design Intro to Git**
+# Welcome to UWO Aero Design Intro to Git
 
 This is to serve as a tutorial for onboarding new members who may have never used git before.
 
 The code changes will be incredibly simple but done in a convoluted manner to explain how to use git commands such as add, commit, push, fetch, as well as a short intro to the interactive rebase.
 
 ## **Housekeeping**
-* Time to complete this tutorial will vary based on how quickly someone can respond to the merge requests. Assuming no wait time:
+* The time required to complete this tutorial will vary based on how quickly someone can respond to the merge requests. Assuming no wait time:
   * If you already know git, this tutorial should be <1 hour
   * If you have no experience then expect about 1-3 hours
-* Tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code.
+* This tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code.
 * The majority of this tutorial will be using the command line, members are free to use GUI based git tools, but they won't be covered here. (It's possible to complete this tutorial using GUI based tools so if you feel more comfortable using them, definitely do so!, there just won't be examples for it)
 * This tutorial assumes you have no prior knowledge other than what a terminal is.
-* The tutorial was written by someone using Linux, but there is no reason why the steps can't be followed on Mac and Windows, though you may need some extra things on Windows.
+* This tutorial was performed using Linux, but there is no reason why the steps can't be followed on Mac and Windows. Windows users, see the [Windows Users Section](#windows-users) for more information.
   
 
 ## **HELP**
-If you need help at point during the tutorial dont be afraid to ask. There is a file name HELPME.md which should contain an updated list of people that have already completed the tutorial or are familiar with the material.
+If you need help at point during the tutorial dont be afraid to ask. Check out [HELPME.md](HELPME.md) which contains an updated list of people that have already completed the tutorial or are familiar with the material.
   
   
 ## **Windows Users**
+If you're on Windows computer, I highly recommend installing the Windows Terminal from the Microsoft Store and using powershell.
 
-If you're on Windows computer which I'm assuming most are, I highly recommend installing the Windows Terminal from the Microsoft Store and using powershell.
-
-I would also recommend setting powershell to be the default terminal for VSCode (assuming you use VSCode). This way all terminal commands should be the same across windows, mac, and linux.
+I would also recommend setting powershell to be the default terminal for VSCode (assuming you use VSCode). This way all terminal commands should be the same across Windows, Mac, and Linux.
   
 
 ## **Let's Start**
-To begin, lets create a directory to store anything aero design related. Open a terminal and navigate to the directory you want to create your new aero-design folder within. You can do this part with a regular file manager as well.
+To begin, lets create a directory to store anything Aero Design related. Open a terminal and navigate to the directory you want to create your new aero-design folder within. You can do this part with a regular file manager as well.
 
 1. Type `cd path/to/somewhere/` to navigate to inside the `somewhere/` folder. Replace path/to/somewhere with a proper file path
 
@@ -139,6 +138,7 @@ Once the modified code has been prepped we can write an explanation for the chan
   
 
 ![](./pictures/nano.png)
+
 nano might seem confusing but its actually really simple. The first line is your commit title, leave a blank line and then write a body for the commit message. Once you're done the options are listed at the bottom.
 
 * Type `ctrl + o` and hit enter to save the commit message
@@ -270,17 +270,17 @@ And now the push will work. **Don't make a merge request yet though!** Just cont
 
 Since you're obviously qualified to walk other people through the tutorial now, how about adding your name to the list of people who have completed this tutorial.
 
-This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the HELPME.md file. *Replace zd with your own initials*
+This is a new change that is completely seperate from the last one so we should create a new branch to do this. Switch back to the develop branch and create a new branch off of it for updating the [HELPME.md](HELPME.md) file. *Replace zd with your own initials*
 
 * `git checkout develop`
 * `git checkout -b zd-update-help develop`
 
-Go to HELPME.md file and add your name to the Super Exclusive List.
+Go to [HELPME.md](HELPME.md)  file and add your name to the Super Exclusive List.
 
 Be sure to update the date aswell so people know when the list was last maintained.
 
 ![](./pictures/Updated-list.png)
-Once youre done, commit and push your changes! (Last Time I tell you how)
+Once youre done, commit and push your changes! (Last time I tell you how)
 
 * `git add .`
 * `git commit` - You'll enter nano (refer to previous sections if you need help)
@@ -298,6 +298,7 @@ On the next screen (nto shown here) remember to give it a good title and explana
 To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). Be sure to message them just in case they dont realize they have been asked on github. It might also be a good idea to ask in the general controls chat so you can get help quicker.
 
 If the reviewer asks you to make any changes, try working through them.
+
 **Remember to switch back to the old branch to actually make the changes though.**
 
 Also ask them if any changes should be made to the HELPME.md list such as if any members have graduated or if a person has been promoted to lead but is not denoted as such on the list.
