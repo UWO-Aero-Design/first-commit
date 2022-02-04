@@ -1,10 +1,9 @@
-# **Welcome to UWO AERO Design's Onboarding Repository**
-
-### The plan for this repository is to contain a variety of tasks such as instructions, tutorials, and onboarding materials that for students to use and get started with Western University's Aero Design Team.
+# UWO AERO Design - Onboarding Repository
+Welcome to the Western Aero Design Team! The following series will contain a variety of items such as instructions, tutorials, and onboarding materials  for students to use and get started with Git and Github.
   
 
-## Currently there is only a git tutorial but in the future this may be expanded
-  
+## Current Tutorials
+* [Introduction to Git (WIP)](git-intro)
 
-## **Current Tutorials**
-* ### Introduction to Git (WIP)
+## Future Tutorials
+* Using Submodules
