@@ -8,6 +8,8 @@ To start a tutorial, find which one you would like to complete in the list of [c
 
 After selecting a tutorial start at the README.md within the tutorial folder. This file should contain the written instruction for the tutorial. Other files within the tutorial folder will either be accompanying material or examples for you to work through.
 
+Tutorials may require that you push code back to the repository, to do that you need permission. To get permission look for the one of the Team Leads of Aero Design, probably through the team's current communication method (currently microsoft teams but could change in the future).
+
 ## **I Want to Create a Tutorial**
 If you think there is a tutorial you would like to create and would useful for the team, talk to one of the Team Leads about it for feedback, and ideas. 
 
