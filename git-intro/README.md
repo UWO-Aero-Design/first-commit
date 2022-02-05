@@ -10,7 +10,7 @@ The code changes will be incredibly simple but done in a convoluted manner to ex
   * If you have no experience then expect about 1-3 hours
 * This tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code.
 * The majority of this tutorial will be using the command line, members are free to use GUI based git tools, but they won't be covered here. (It's possible to complete this tutorial using GUI based tools so if you feel more comfortable using them, definitely do so!, there just won't be examples for it)
-* This tutorial assumes you have no prior knowledge other than what a terminal is.
+* This tutorial assumes you have no prior knowledge other than what a terminal is. If you dont know what a terminal is  [Start Here](https://www.youtube.com/watch?v=mUXVBMhr7Xg)
 * This tutorial was performed using Linux, but there is no reason why the steps can't be followed on Mac and Windows. Windows users, see the [Windows Users Section](#windows-users) for more information.
   
 
