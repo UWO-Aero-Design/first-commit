@@ -1,18 +1,28 @@
-# Welcome to UWO Aero Design Intro to Git
+# **Welcome to UWO Aero Design Intro to Git**
 
 This is to serve as a tutorial for onboarding new members who may have never used git before.
 
+## **What Will You learn**
 The code changes will be incredibly simple but done in a convoluted manner to explain how to use git commands such as add, commit, push, fetch, as well as a short intro to the interactive rebase.
 
 ## **Housekeeping**
 * The time required to complete this tutorial will vary based on how quickly someone can respond to the merge requests. Assuming no wait time:
   * If you already know git, this tutorial should be <1 hour
   * If you have no experience then expect about 1-3 hours
-* This tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code.
+* This tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code. [Installation](#what-you-need)
 * The majority of this tutorial will be using the command line, members are free to use GUI based git tools, but they won't be covered here. (It's possible to complete this tutorial using GUI based tools so if you feel more comfortable using them, definitely do so!, there just won't be examples for it)
 * This tutorial assumes you have no prior knowledge other than what a terminal is. If you dont know what a terminal is  [Start Here](https://www.youtube.com/watch?v=mUXVBMhr7Xg)
 * This tutorial was performed using Linux, but there is no reason why the steps can't be followed on Mac and Windows. Windows users, see the [Windows Users Section](#windows-users) for more information.
-  
+
+# **What you Need**
+Above it was mentioned that you need a programming langauge installed to be able to complete the tutorial aswell as some kind of text editor or ide. If you dont have those things then I have linked some videos below to get you setup. One of python or c++ is alright, both aren't necessary unless you want both. Depending on how long it has been since these were updated, newer versions of python may be out so, just install the most recent version available.
+* [Install VScode on Windows, Mac and Linux](https://code.visualstudio.com/download)
+* [Setup C++ on Windows](https://www.youtube.com/watch?v=jvg4VtYEhKU)
+* [Setup C++ on Mac](https://www.youtube.com/watch?v=KhGnYWplLVo)
+* [Setup C++ on Linux](https://www.youtube.com/watch?v=BEJUdkPemYY)
+* [Setup python on Windows](https://www.youtube.com/watch?v=i-MuSAwgwCU)
+* [Setup python on Mac](https://www.youtube.com/watch?v=TgA4ObrowRg)
+* [Setup python on Linux](https://www.youtube.com/watch?v=Br2xt6B57SA)
 
 ## **HELP**
 If you need help at point during the tutorial dont be afraid to ask. Check out [HELPME.md](HELPME.md) which contains an updated list of people that have already completed the tutorial or are familiar with the material.
