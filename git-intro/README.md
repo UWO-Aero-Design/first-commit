@@ -15,7 +15,7 @@ The code changes will be incredibly simple but done in a convoluted manner to ex
 * This tutorial was performed using Linux, but there is no reason why the steps can't be followed on Mac and Windows. Windows users, see the [Windows Users Section](#windows-users) for more information.
 
 # **What you Need**
-Above it was mentioned that you need a programming langauge installed to be able to complete the tutorial aswell as some kind of text editor or ide. If you dont have those things then I have linked some videos below to get you setup. One of python or c++ is alright, both aren't necessary unless you want both. Depending on how long it has been since these were updated, newer versions of python may be out so, just install the most recent version available.
+Above it was mentioned that you need a programming langauge installed to be able to complete the tutorial aswell as some kind of text editor or ide and lastly git. If you dont have those things then I have linked some videos below to get you setup. One of python or c++ is alright, both aren't necessary unless you want both. Depending on how long it has been since these were updated, newer versions of python may be out so, just install the most recent version available.
 * [Install VScode on Windows, Mac and Linux](https://code.visualstudio.com/download)
 * [Setup C++ on Windows](https://www.youtube.com/watch?v=jvg4VtYEhKU)
 * [Setup C++ on Mac](https://www.youtube.com/watch?v=KhGnYWplLVo)
@@ -23,13 +23,18 @@ Above it was mentioned that you need a programming langauge installed to be able
 * [Setup python on Windows](https://www.youtube.com/watch?v=i-MuSAwgwCU)
 * [Setup python on Mac](https://www.youtube.com/watch?v=TgA4ObrowRg)
 * [Setup python on Linux](https://www.youtube.com/watch?v=Br2xt6B57SA)
+* [git on windows](#windows-users)
+* [git on Mac](https://www.youtube.com/watch?v=F02LEVYEmQw)
+* [git on linux](https://www.youtube.com/watch?v=PLQQ3tJwBJg)
 
 ## **HELP**
 If you need help at point during the tutorial dont be afraid to ask. Check out [HELPME.md](HELPME.md) which contains an updated list of people that have already completed the tutorial or are familiar with the material.
   
   
 ## **Windows Users**
-If you're on Windows computer, I highly recommend installing the [Windows Terminal from the Microsoft Store](https://www.microsoft.com/en-ca/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) and using powershell.
+If you're on Windows computer, I highly recommend installing the [Windows Terminal from the Microsoft Store](https://www.microsoft.com/en-ca/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) and using powershell. Using powershell will allow you to use git commands from the command line without opening another window on your screen.
+
+[Setting up git and powershell](https://www.youtube.com/watch?v=Tg1t3_NzJo4)
 
 I would also recommend setting powershell to be the default terminal for VSCode (assuming you use VSCode). This way all terminal commands should be the same across Windows, Mac, and Linux. [How to change default shell in VSCode](https://www.youtube.com/watch?v=m-fXFyWYwdc)
   
