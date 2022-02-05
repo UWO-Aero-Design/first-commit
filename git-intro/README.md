@@ -29,9 +29,9 @@ If you need help at point during the tutorial dont be afraid to ask. Check out [
   
   
 ## **Windows Users**
-If you're on Windows computer, I highly recommend installing the Windows Terminal from the Microsoft Store and using powershell.
+If you're on Windows computer, I highly recommend installing the [Windows Terminal from the Microsoft Store](https://www.microsoft.com/en-ca/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) and using powershell.
 
-I would also recommend setting powershell to be the default terminal for VSCode (assuming you use VSCode). This way all terminal commands should be the same across Windows, Mac, and Linux.
+I would also recommend setting powershell to be the default terminal for VSCode (assuming you use VSCode). This way all terminal commands should be the same across Windows, Mac, and Linux. [How to change default shell in VSCode](https://www.youtube.com/watch?v=m-fXFyWYwdc)
   
 
 ## **Let's Start**
