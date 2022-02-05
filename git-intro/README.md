@@ -2,6 +2,25 @@
 
 This is to serve as a tutorial for onboarding new members who may have never used git before.
 
+## **Table of Contents**
+* [What Will you Learn](#what-will-you-learn)
+* [Housekeeping / What to Expect](#housekeeping)
+* [What you Need](#what-you-need)
+* [Help](#help)
+* [Extra for Windows Users](#window-users)
+* [Start Tutorial](#lets-start)
+  * [Branches and Git Checkout](#branches-and-git--checkout--branch)
+  * [Contributing](#contributing-code-and-git--add--commit--push)
+    * [Git Add](#git-add)
+    * [Git Commit](#git-commit)
+    * [Git Push](#git-push)
+  * [Rebase Round 1](#git-rebase)
+  * [Adding your name to HELPME.md](#helpmemd)
+  * [Resolving Conflicts](#conflicts-if-any)
+  * [Git Pull and Fetch](#updating-local-and-git--fetch--pull)
+  * [Rebase Round 2](#git-rebase-round-2)
+* [Congratulations](#congratulations)
+
 ## **What Will You learn**
 The code changes will be incredibly simple but done in a convoluted manner to explain how to use git commands such as add, commit, push, fetch, as well as a short intro to the interactive rebase.
 
