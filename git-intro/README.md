@@ -28,9 +28,9 @@ The code changes will be incredibly simple but done in a convoluted manner to ex
 * The time required to complete this tutorial will vary based on how quickly someone can respond to the merge requests. Assuming no wait time:
   * If you already know git, this tutorial should be <1 hour
   * If you have no experience then expect about 1-3 hours
-* This tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code. [Installation](#what-you-need)
+* This tutorial assumes you have some sort of programming language compiler or interpreter installed on your computer so that you can actually run code. [Installation instructions](#what-you-need).
 * The majority of this tutorial will be using the command line, members are free to use GUI based git tools, but they won't be covered here. (It's possible to complete this tutorial using GUI based tools so if you feel more comfortable using them, definitely do so!, there just won't be examples for it)
-* This tutorial assumes you have no prior knowledge other than what a terminal is. If you dont know what a terminal is  [Start Here](https://www.youtube.com/watch?v=mUXVBMhr7Xg)
+* This tutorial assumes you have no prior knowledge other than what a terminal is. If you dont know what a terminal is [Start Here](https://www.youtube.com/watch?v=mUXVBMhr7Xg)
 * This tutorial was performed using Linux, but there is no reason why the steps can't be followed on Mac and Windows. Windows users, see the [Windows Users Section](#windows-users) for more information.
 
 # **What you Need**
@@ -39,12 +39,12 @@ Above it was mentioned that you need a programming langauge installed to be able
 * [Setup C++ on Windows](https://www.youtube.com/watch?v=jvg4VtYEhKU)
 * [Setup C++ on Mac](https://www.youtube.com/watch?v=KhGnYWplLVo)
 * [Setup C++ on Linux](https://www.youtube.com/watch?v=BEJUdkPemYY)
-* [Setup python on Windows](https://www.youtube.com/watch?v=i-MuSAwgwCU)
-* [Setup python on Mac](https://www.youtube.com/watch?v=TgA4ObrowRg)
-* [Setup python on Linux](https://www.youtube.com/watch?v=Br2xt6B57SA)
-* [git on windows](#windows-users)
+* [Setup Python on Windows](https://www.youtube.com/watch?v=i-MuSAwgwCU)
+* [Setup Python on Mac](https://www.youtube.com/watch?v=TgA4ObrowRg)
+* [Setup Python on Linux](https://www.youtube.com/watch?v=Br2xt6B57SA)
+* [git on Windows](#windows-users)
 * [git on Mac](https://www.youtube.com/watch?v=F02LEVYEmQw)
-* [git on linux](https://www.youtube.com/watch?v=PLQQ3tJwBJg)
+* [git on Linux](https://www.youtube.com/watch?v=PLQQ3tJwBJg)
 
 ## **HELP**
 If you need help at point during the tutorial dont be afraid to ask. Check out [HELPME.md](HELPME.md) which contains an updated list of people that have already completed the tutorial or are familiar with the material.
@@ -87,7 +87,9 @@ Type `git clone <repo-to-clone>` replacing `<x-x-x>` with the text you copied. R
 
 *NOTE: `git clone` creates a local version of the repository by copying the files from a remote version (If you are familiar with OneDrive, you can think of this as syncing our device with the files stored in the 'cloud')*
 
-Your Terminal might look something like this now ![](./pictures/progress-after-clone.png)
+Your Terminal might look something like this now
+
+![](./pictures/progress-after-clone.png)
 
 
 ## **Branches and GIT { CHECKOUT | BRANCH }**
@@ -104,6 +106,8 @@ Other helpful branch commands are:
 * `git branch -a` to list **all** branches (local and remote)
 
 ![](./pictures/git-branch.png)
+
+*NOTE: some repositories will have a `main` branch instead of a `master` branch*
 
 We never want to do our work on the `master` or `develop` branches. Master branches should only contain completely functional code and is mostly for creating new major versions. Develop branches are for code being prepped for master and is where we first attempt to combine our work into a functional system. Develop will probably be less stable than master but should have many new additions.
 
@@ -238,6 +242,7 @@ First make sure your code file is open in an editor. (`code .` if you have VSCod
 Type `git rebase -i HEAD~1` to say we want to modify the last 1 commit from our current point in time (HEAD). The `-i` option means interactive. You'll get a screen like this (It's nano again):
 
 ![](./pictures/interactive-rebase.png)
+
 You can see our commit, if we had more commit and specified HEAD~x we would have seen x commit there.
 
 Underneath it are a bunch of commands we are allowed to use. We want to modify the actual code in our commit so we will use `edit`. Do this by replacing
@@ -274,7 +279,7 @@ Now go back to your terminal and type
 * `git add modified-file-name`
 * `git rebase --continue`
 
-Nano will appear again, and our original commit message will be on the screen. You can change the commit title or message if your changes need to reflected here. Once your satisfied type:
+Nano will appear again, and our original commit message will be on the screen. You can change the commit title or message if your changes need to reflected here. Once you're satisfied type:
 
 Then hit `ctrl+o` , `enter` , and `ctrl+x` (This is the last time I'll be writing that)
 
@@ -290,7 +295,7 @@ Successfully rebased and updated refs/heads/zd-onboard.
 
 Now we need to push our changes back to the remote again.
 
-You can try it using the command from before but youll get an error
+You can try it using the command from before but you'll get an error
 
 ![](./pictures/push-fail.png)
 
@@ -316,6 +321,7 @@ Go to [HELPME.md](HELPME.md)  file and add your name to the Super Exclusive List
 Be sure to update the date aswell so people know when the list was last maintained.
 
 ![](./pictures/Updated-list.png)
+
 Once youre done, commit and push your changes! (Last time I tell you how)
 
 * `git add .`
@@ -329,7 +335,7 @@ Now lets go make a Merge/Pull Request for our old branch.
 Go to the repository on GitHub and find your fizzbuzz/twosum branch and create a pull request for it. Set the target branch to develop
 ![](./pictures/merge-branch.png)
 
-On the next screen (nto shown here) remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
+On the next screen (not shown here) remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
 
 To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). Be sure to message them just in case they dont realize they have been asked on github. It might also be a good idea to ask in the general controls chat so you can get help quicker.
 
