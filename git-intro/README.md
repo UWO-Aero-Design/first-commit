@@ -194,7 +194,9 @@ We can see:
 The changes you have made so far are still only on your computer. If someone wants to see the work you have done and use it for themselves, it needs to be available on the remote repository.
 
 Type `git push origin branch-name` and hit enter
-You'll be given a bunch of output, as long as there are no errors, everything is okay
+You'll be given a bunch of output, as long as there are no errors, everything is okay.
+
+If this is your first time ever pushing code to git, it will ask you to configure a username and email. You can do this for only the current repository or globally. The commands to type probably showed up in you terminal but you can copy them from [here](https://support.atlassian.com/bitbucket-cloud/docs/configure-your-dvcs-username-for-commits/) aswell. Be sure to replace your actual username and email in the command.
 
 ```
 ...Documents/aero-design/first-commit on zd-onboard  took 4m4s 
