@@ -11,6 +11,7 @@ Names that have been striked through with a line are people who have graduated o
 Names with **bold** are team leads and senior members
 
 # Super Exclusive List
-Super Exclusive List is Up-To-Date as of **February 01, 2022 @ 10:06pm EST**
+Super Exclusive List is Up-To-Date as of **February 02, 2022 @ 5:45pm EST**
 * ~~UWO SAE AERO DESIGN TEAM~~
 * Zachary D'Souza
+* Stuart Wing
