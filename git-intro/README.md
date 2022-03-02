@@ -51,12 +51,19 @@ If you need help at point during the tutorial dont be afraid to ask. Check out [
   
   
 ## **Windows Users**
-If you're on Windows computer, I highly recommend installing the [Windows Terminal from the Microsoft Store](https://www.microsoft.com/en-ca/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) and using powershell. Using powershell will allow you to use git commands from the command line without opening another window on your screen.
+If you're on Windows computer, I highly recommend installing the [Windows Terminal from the Microsoft Store](https://www.microsoft.com/en-ca/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) and using powershell. Using powershell will allow you to use git commands from the command line without opening another window on your screen. It's also reccomended to use the powershell from the windows store rather than the powershell found pre-installed on your system.
+
+![](./pictures/powershell-windows-store.png)
+![](./pictures/correct-powershell.png)
+As you can see from the pictures, you will want "PowerShell" and not "Windows PowerShell"
 
 [Setting up git and powershell](https://www.youtube.com/watch?v=Tg1t3_NzJo4)
 
 I would also recommend setting powershell to be the default terminal for VSCode (assuming you use VSCode). This way all terminal commands should be the same across Windows, Mac, and Linux. [How to change default shell in VSCode](https://www.youtube.com/watch?v=m-fXFyWYwdc)
-  
+
+Lastly for windows users is to setup the default editor for git to be nano as its much easier to use than vim. You can do this by opening up your terminal and typing the following:
+
+`git config --global core.editor "nano"`
 
 ## **Let's Start**
 To begin, lets create a directory to store anything Aero Design related. Open a terminal and navigate to the directory you want to create your new aero-design folder within. You can do this part with a regular file manager as well.
@@ -176,6 +183,14 @@ Once the modified code has been prepped we can write an explanation for the chan
   
 
 ![](./pictures/nano.png)
+
+If the above doesn't appear then its possible you are in vi. If you are in vi you can get out by hitting `esc` followed by typing `:wq!`. The run `git config --global core.editor "nano"` to set the default to the nano editor. Then rerun `git commit`
+
+It's also possible you get an error about not having a user defined and it will ask you to specify and username and email. This only necessary once and shows up if its the first time you have tried to commit code on the current device. Just run the following 2 lines and replace <...> with your name and email.
+```
+git config --global user.name <Your name here>
+git config --global user.email <Your email here>
+```
 
 nano might seem confusing but its actually really simple. The first line is your commit title, leave a blank line and then write a body for the commit message. Once you're done the options are listed at the bottom.
 
