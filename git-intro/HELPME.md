@@ -15,3 +15,4 @@ Super Exclusive List is Up-To-Date as of **February 02, 2022 @ 5:45pm EST**
 * ~~UWO SAE AERO DESIGN TEAM~~
 * Zachary D'Souza
 * Stuart Wing
+* Jeff St. Jean
