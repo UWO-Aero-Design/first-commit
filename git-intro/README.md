@@ -352,7 +352,9 @@ Go to the repository on GitHub and find your fizzbuzz/twosum branch and create a
 
 On the next screen (not shown here) remember to give it a good title and explanation. We currently don't have any style guides or formatting rules for PR/MRs but know that many companies will.
 
-To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). Be sure to message them just in case they dont realize they have been asked on github. It might also be a good idea to ask in the general controls chat so you can get help quicker.
+To merge in code you need to get approval, have someone who has already completed the tutorial look it over (*HINT: Look at HELPME.md*). When you have decided on a person look at the right side of the github review page. It should say assignee, reviewer, click on the reviewer and go through the dropdown menu until you find the person you would like to review it.
+
+The requested person should receive an email through github to let them know, however, **be sure to message them just in case they dont realize they have been asked.** It might also be a good idea to ask in the general controls chat so you can get help quicker in case someone else is available. Currently the aero design team uses Microsoft Teams for communication.
 
 If the reviewer asks you to make any changes, try working through them.
 
