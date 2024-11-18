@@ -24,5 +24,5 @@ for i in range(lower, upper+1, 1):
     if is_fizz:
         print('fizz', end='')
     if is_buzz:
-        print('buzz', end='')
+        print('buzzz', end='')
     print('')
