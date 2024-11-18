@@ -9,8 +9,8 @@
 """
 
 # The range of numbers we wish to run the exercise on
-lower = 1
-upper = 100
+lower = 75
+upper = 200
 
 # The multiples we want print fizz and buzz on
 fizz = 9
